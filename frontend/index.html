@@ -393,7 +393,8 @@ document.addEventListener("DOMContentLoaded", function() {
         selectedCampuses.forEach(campus => {
             Object.keys(CAMPUS_DATA[campus]).forEach(bName => {
                 const label = document.createElement("label");
-                label.innerHTML = `<input type="checkbox" value="${bName}" ${isFirst ? 'checked' : ''}><span>${bName}</span>`;
+                const isChecked = (bName === "教三") ? "checked" : "";
+                label.innerHTML = `<input type="checkbox" value="${bName}" ${isChecked}><span>${bName}</span>`;
                 container.appendChild(label);
                 isFirst = false;
             });
